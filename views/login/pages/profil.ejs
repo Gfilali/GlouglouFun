@@ -1,0 +1,195 @@
+ <!DOCTYPE html>
+<head>
+    <% include ../../head %>
+</head>
+<body class="container">    
+    <header>
+        <% include ../partials/header %>
+    </header>    
+    <main>    
+        <div class="jumbotron row">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                    <h6>Upload a different photo...</h6>
+                    
+                    <input type="file" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-9">
+                <form class="form-horizontal " action="/update" method="POST">
+                    <div class = "span12">
+                        <h2>My profil</h2>
+                        <div class="form-group">
+                            <label for="inputFirstName3" class="col-sm-2 control-label">First Name</label>
+                            <div class="col-sm-10">
+                            <input name="firstName" class="form-control" id="inputFirstName3" value="<%= user.firstName %>" placeholder="First name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLastName3" class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-10">
+                            <input name="lastName" class="form-control" id="inputLastName3" value="<%= user.lastName %>" placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLastName3" class="col-sm-2 control-label">Birth Date</label>
+                            <div class="col-sm-10">
+                            <div class="bfh-datepicker">
+                                <div class="input-prepend bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+                                    <span class="add-on"><i class="icon-calendar"></i></span>
+                                    <input name="birthDate" type="text" class="input-medium">
+                                </div>
+                                <div class="bfh-datepicker-calendar">
+                                    <table class="calendar table table-bordered">
+                                    <thead>
+                                        <tr class="months-header">
+                                        <th class="month" colspan="4">
+                                            <a class="previous" href="#"><i class="icon-chevron-left"></i></a>
+                                            <span></span>
+                                            <a class="next" href="#"><i class="icon-chevron-right"></i></a>
+                                        </th>
+                                        <th class="year" colspan="3">
+                                            <a class="previous" href="#"><i class="icon-chevron-left"></i></a>
+                                            <span></span>
+                                            <a class="next" href="#"><i class="icon-chevron-right"></i></a>
+                                        </th>
+                                        </tr>
+                                        <tr class="days-header">
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectCity3" class="col-sm-2 control-label">Country</label>
+                            <div class="col-sm-10">
+                            <select id="countries_states1" class="form-control bfh-countries" data-country="US"></select>
+                            <select class="form-control bfh-states" name="country" value="<%= user.country %>" data-country="countries_states1"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputUsername3" class="col-sm-2 control-label">Username</label>
+                            <div class="col-sm-10">
+                            <input name="username" class="form-control" id="inputUsername3" value="<%= user.username %>" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                            <input name="email" type="email" class="form-control" id="inputEmail3" value="<%= user.email %>" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-10">
+                            <input name="password" id="disabledInput" type="password" class="form-control" id="inputPassword3" value="<%= user.password %>" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNumber3" class="col-sm-2 control-label">Mobile number</label>
+                            <div class="col-sm-10">
+                            <input name="numberPh" value="<%= user.numberPh %>" type="text" class="form-control bfh-phone" data-country="FR">
+                            </div>
+                        </div>
+                        
+                        <h2>My preferences</h2>
+                        <!-- Multiple Checkboxes -->
+                        <div name="music" class="form-group col-md-6">
+                            <label class="col-md-2 control-label" for="checkboxes1">Music</label>
+                            <div class="col-md-9">
+                                <div class="checkbox">
+                                    <label for="checkboxes1-0">
+                                    <input type="checkbox" name="checkboxes1" id="checkboxes1-0" value="1">
+                                    Rock
+                                    </label>
+                                    </div>
+                                <div class="checkbox">
+                                    <label for="checkboxes1-1">
+                                    <input type="checkbox" name="checkboxes1" id="checkboxes1-1" value="2">
+                                    Jazz
+                                    </label>
+                                    </div>
+                                <div class="checkbox">
+                                    <label for="checkboxes1-2">
+                                    <input type="checkbox" name="checkboxes1" id="checkboxes1-2" value="3">
+                                    Rap
+                                    </label>
+                                    </div>
+                                <div class="checkbox">
+                                <label for="checkboxes1-3">
+                                <input type="checkbox" id="checkboxes1-3" value="4">
+                                Electro
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Multiple Radios -->
+                        <div name="drink" class="form-group col-md-6">
+                        <label class="col-md-2 control-label" for="radios2">Drinker</label>
+                            <div class="col-md-9">
+                                <div class="radio">
+                                    <label for="radios2-0">
+                                    <input type="radio" name="radios2" id="radios2-0" value="1" checked="checked">
+                                    Too much
+                                    </label>
+                                    </div>
+                                <div class="radio">
+                                    <label for="radios2-1">
+                                    <input type="radio" name="radios2" id="radios2-1" value="2">
+                                    A lot
+                                    </label>
+                                    </div>
+                                <div class="radio">
+                                    <label for="radios2-2">
+                                    <input type="radio" name="radios2" id="radios2-2" value="3">
+                                    A bit
+                                    </label>
+                                    </div>
+                                <div class="radio">
+                                <label for="radios2-3">
+                                <input type="radio"  id="radios2-3" value="4">
+                                Not enough
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Multiple Radios -->
+                        <div name="smoke" class="form-group col-md-6">
+                        <label class="col-md-2 control-label" for="radios1">Smoking</label>
+                            <div class="col-md-9">
+                                <div class="radio">
+                                    <label for="radios1-0">
+                                    <input type="radio" name="radios1" id="radios1-0" value="1" checked="checked">
+                                    Yes
+                                    </label>
+                                    </div>
+                                <div class="radio">
+                                <label for="radios1-1">
+                                <input type="radio" name="radios1" id="radios1-1" value="2">
+                                No
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Update profile</button>
+                            </div>
+                </form>
+            </div>
+        </div>
+    </main>    
+    <footer>
+        <% include ../../footer %>
+    </footer>        
+</body>
+</html>

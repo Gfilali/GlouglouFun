@@ -3,10 +3,13 @@
   <h1>GlouGlou Fun <small>Des bieres et du fun </small></h1>
 </div> 
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container-fluid">    
+    <div class="container-fluid" action="/signout">    
         <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <button type="button" action="/signout" method="POST" class="btn btn-default navbar-btn">Sign in</button>
+            <li><a href="/logHome">Home</a></li>
+            <li><a href="/logProfil">Profil</a></li>
+        </ul>   
+        <ul class="nav navbar-nav navbar-right">
+            <a class="btn btn-default navbar-btn" href="/signout">Sign out</a>
         </ul>          
     </div>
 </nav>
